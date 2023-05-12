@@ -1,0 +1,321 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\estudiante\Downloads\VHDLs\simulation\qsim
+vCONTROL
+Z1 !s100 73INoR=dXoUJjM=oDgWB^0
+Z2 I>z>8a<TmjA_W=k<Sc_JG<3
+Z3 V9_79:J9:HF2e;a=iWnc^P3
+Z4 dC:\Users\estudiante\Downloads\VHDLs_16_11_19\simulation\qsim
+Z5 w1573954609
+Z6 8SISTEMA.vo
+Z7 FSISTEMA.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|SISTEMA.vo|
+Z10 o-work work -O0
+Z11 n@c@o@n@t@r@o@l
+!i10b 1
+!s85 0
+Z12 !s108 1573954611.886000
+Z13 !s107 SISTEMA.vo|
+!s101 -O0
+vCONTROL_vlg_check_tst
+!i10b 1
+Z14 !s100 Jkc89bdA7ZI3>Ka1VRocn2
+Z15 Ig>NLck`NXcaF47RAk5mP@0
+Z16 VdK380]I:A1O[C?B=bVUF_1
+R4
+Z17 w1573954608
+Z18 8SISTEMA.vt
+Z19 FSISTEMA.vt
+L0 69
+R8
+r1
+!s85 0
+31
+Z20 !s108 1573954612.359000
+Z21 !s107 SISTEMA.vt|
+Z22 !s90 -work|work|SISTEMA.vt|
+!s101 -O0
+R10
+Z23 n@c@o@n@t@r@o@l_vlg_check_tst
+vCONTROL_vlg_sample_tst
+!i10b 1
+Z24 !s100 SQP>f:Z46CmzMU<z8SZ?M2
+Z25 I7HGTm:;oQoD8S@izSo>AE3
+Z26 VN<O7`fK28a?]YDLeI;>gZ1
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@c@o@n@t@r@o@l_vlg_sample_tst
+vCONTROL_vlg_vec_tst
+!i10b 1
+!s100 VAW@]^fKfdzUQ_X7>D`F?3
+I6L?GzMa=2X:@49CAkTMBD0
+Z28 V@jzDNUG]@V1Y8n[c>FbZU0
+R4
+R17
+R18
+R19
+Z29 L0 1329
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@c@o@n@t@r@o@l_vlg_vec_tst
+vconversor
+Z31 !s100 R@P4UlRa0RfPMM^3<RlLM3
+Z32 INFPd>zO3BNzLkMhcmBOnO3
+Z33 VX:IQo^3l>P5H0<Je?RfoM2
+Z34 dC:\Users\estudiante\Downloads\VHDLs\simulation\qsim
+Z35 w1573743656
+R6
+R7
+L0 31
+R8
+r1
+31
+R9
+R10
+Z36 !s108 1573743657.003000
+R13
+!i10b 1
+!s85 0
+!s101 -O0
+vconversor_vlg_check_tst
+Z37 IIf5Zm3XWd9e?i?21mX7lb1
+Z38 V7BK]Wk8kfV^Q;<=K>JmaI1
+R34
+Z39 w1573743650
+R18
+R19
+L0 63
+R8
+r1
+31
+Z40 !s108 1573743657.213000
+Z41 !s107 SISTEMA.vt|
+R22
+R10
+Z42 !s100 cCY?De_cF9H3A^zYSi0kl1
+!i10b 1
+!s85 0
+!s101 -O0
+vconversor_vlg_sample_tst
+Z43 !s100 a1Z>ZKKeTeH^jA[Hc_5Sg2
+Z44 Id^UI5NJ^@nQXE?1C`ZQV`0
+Z45 VL?g`e2z<4:nMPkcWE[A2V3
+R34
+R39
+R18
+R19
+L0 29
+R8
+r1
+31
+R40
+R41
+R22
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vconversor_vlg_vec_tst
+Z46 !s100 <C=@kmBSDi=FIinVjIf]P2
+Z47 I?::EMj1lVD^D1LC3?CP=?0
+Z48 V>_c_8d<0B?BWTSa0PVHi;1
+R34
+R39
+R18
+R19
+Z49 L0 739
+R8
+r1
+31
+R40
+R41
+R22
+R10
+!i10b 1
+!s85 0
+!s101 -O0
+vSistema
+Z50 I8OZ1FH<Ceo>Of2@]6R1^G0
+Z51 VIAUQZFzKDZ^d?OP=3ha>b3
+R34
+Z52 w1573741585
+R6
+R7
+L0 31
+R8
+r1
+31
+R10
+Z53 n@sistema
+Z54 !s100 2Wbl30RY3XESMM?MGzb`B2
+Z55 !s108 1573741586.321000
+R13
+R9
+!i10b 1
+!s85 0
+!s101 -O0
+vSistema_vlg_check_tst
+Z56 I5gRdnX8<25S>KWVaZ=[=W1
+Z57 VDnR]fX9d7F^`eba4E`j[i1
+R34
+Z58 w1573741579
+R18
+R19
+L0 63
+R8
+r1
+31
+Z59 !s108 1573741586.599000
+R41
+R22
+R10
+Z60 n@sistema_vlg_check_tst
+Z61 !s100 ZjW4zl>e;:D5?Zf_>Ie>z2
+!i10b 1
+!s85 0
+!s101 -O0
+vSistema_vlg_sample_tst
+Z62 I7RzdFA6P4KaFiDn:d:7_U0
+Z63 VJ8h=C>82n8F5@bl:FjZ_U3
+R34
+R58
+R18
+R19
+L0 29
+R8
+r1
+31
+R59
+R41
+R22
+R10
+Z64 n@sistema_vlg_sample_tst
+Z65 !s100 YBTikTK8m4=>`?3Y2z9Gm3
+!i10b 1
+!s85 0
+!s101 -O0
+vSistema_vlg_vec_tst
+Z66 I@6MgiG]EHbG[KGJY@bE?P2
+Z67 V_d9a;[:MP`95zkO`IoHK32
+R34
+R58
+R18
+R19
+Z68 L0 2355
+R8
+r1
+31
+R59
+R41
+R22
+R10
+Z69 n@sistema_vlg_vec_tst
+Z70 !s100 9CMUW6ielmU8X;9>[S<^E1
+!i10b 1
+!s85 0
+!s101 -O0
+vTransmisor
+Z71 !s100 `[JAlb6h4IcJl<Qb:AQXn0
+Z72 INJ9=TjjC1YkTk4dP9`TOU2
+Z73 VCPSkjfGcA0IAdD7>Z>F1i3
+R34
+Z74 w1573930259
+R6
+R7
+L0 31
+R8
+r1
+31
+R9
+R10
+Z75 n@transmisor
+Z76 !s108 1573930261.564000
+R13
+!i10b 1
+!s85 0
+!s101 -O0
+vTransmisor_vlg_check_tst
+Z77 !s100 o3_1M1dfoD3gBRGZH_Lie3
+Z78 ICUZT2bg>7Gec^]n3>?I;<2
+Z79 VS:_kAaN?COmaXa<=CfTBI3
+R34
+Z80 w1573930258
+R18
+R19
+L0 67
+R8
+r1
+31
+Z81 !s108 1573930261.843000
+R41
+R22
+R10
+Z82 n@transmisor_vlg_check_tst
+!i10b 1
+!s85 0
+!s101 -O0
+vTransmisor_vlg_sample_tst
+Z83 !s100 ZP2F=g2aDNR<jbcieAaV30
+Z84 I=2U>0g_CXHZj@;J>47DFd0
+Z85 VX;L`1;=kG3n0lGA^Ej?di1
+R34
+R80
+R18
+R19
+L0 29
+R8
+r1
+31
+R81
+R41
+R22
+R10
+Z86 n@transmisor_vlg_sample_tst
+!i10b 1
+!s85 0
+!s101 -O0
+vTransmisor_vlg_vec_tst
+Z87 I66AEJWSD0;g9FXnaeRW9F2
+Z88 VM=]m2<UDMc4IeXgcLV^Fc3
+R34
+R80
+R18
+R19
+Z89 L0 162
+R8
+r1
+31
+R81
+R41
+R22
+R10
+Z90 n@transmisor_vlg_vec_tst
+Z91 !s100 1_MAC_5iQ^_gWzSj_zo?P3
+!i10b 1
+!s85 0
+!s101 -O0

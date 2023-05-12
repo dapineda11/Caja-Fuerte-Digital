@@ -1,0 +1,80 @@
+--*************************--
+-- DEFINICIÓN DE LIBRERIAS --
+--*************************--
+library IEEE; 
+use IEEE.std_logic_1164.all;
+--****--
+-- DEFINICIÓN DE ENTIDAD --
+--****--
+	entity conversor is
+port(
+			unidades: in std_logic_vector(3 downto 0);
+			decenas: in std_logic_vector(3 downto 0);
+			centenas: in std_logic_vector(3 downto 0);
+			ultracarry: in std_logic;
+			u_ascii: out std_logic_vector(7 downto 0);
+			d_ascii: out std_logic_vector(7 downto 0);
+			c_ascii: out std_logic_vector(7 downto 0);
+			m_ascii: out std_logic_vector(7 downto 0);
+			
+	  );
+end entity conversor;    
+
+--******************************************************--
+-- este bloque convierte binario a ascii		                        --
+--       					        --
+--                                                      --
+--******************************************************--
+    
+--***--
+--DEFINICIÓN DE ARQUITECTURA --
+--***--
+architecture conversorarch of conversor is
+--***--
+--DEFINICIÓN DE COMPONENTES--
+--***-- 
+
+--DEFINICIÓN DE SEÑALES DE CONEXIÓN --
+--****--
+
+
+--******--
+--Instancias y Conectividad
+--******--
+begin
+u_ascii(0) <= unidades(0);
+u_ascii(1) <= unidades(1);
+u_ascii(2) <= unidades(2);
+u_ascii(3) <= unidades(3);
+u_ascii(4) <= '1';
+u_ascii(5) <= '1';
+u_ascii(6) <= '0';
+u_ascii(7) <= '0';
+
+d_ascii(0) <= decenas(0);
+d_ascii(1) <= decenas(1);
+d_ascii(2) <= decenas(2);
+d_ascii(3) <= decenas(3);
+d_ascii(4) <= '1';
+d_ascii(5) <= '1';
+d_ascii(6) <= '0';
+d_ascii(7) <= '0';
+
+c_ascii(0) <= centenas(0);
+c_ascii(1) <= centenas(1);
+c_ascii(2) <= centenas(2);
+c_ascii(3) <= centenas(3);
+c_ascii(4) <= '1';
+c_ascii(5) <= '1';
+c_ascii(6) <= '0';
+c_ascii(7) <= '0';
+
+m_ascii(0) <= ultracarry;
+m_ascii(1) <= '0';
+m_ascii(2) <= '0';
+m_ascii(3) <= '0';
+m_ascii(4) <= '1';
+m_ascii(5) <= '1';
+m_ascii(6) <= '0';
+m_ascii(7) <= '0';
+end  conversorArch;

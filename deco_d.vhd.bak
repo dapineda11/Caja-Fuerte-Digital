@@ -1,0 +1,34 @@
+--Definicion de las bibliotecas 
+library IEEE; 
+use IEEE.std_logic_1164.all; 
+library ALTERA;
+use ALTERA.altera_primitives_components.all;
+
+--******************--
+-- Autor:Daniel Pineda						                       --
+--       												           --
+--                                                      --
+--******************--
+
+entity deco_d is
+port(
+	
+		ent_d		: in std_logic_vector (3 downto 0);
+		decena	: out std_logic_vector (6 downto 0) --gfedcba
+		);
+	end entity deco_d;
+	
+
+
+architecture deco_dArch of deco_d is
+begin
+
+decena(0) <= (not( ( ( (not ent_d(0) ) or (ent_d(1) ) or(ent_d(2) ) or (ent_d(3) ) ) and ( (ent_d(0) ) or(ent_d(1) ) or (not ent_d(2) ) or (ent_d(3) ) ) and( (not ent_d(0) ) or (not ent_d(1) ) or (ent_d(2) )or (not ent_d(3) ) ) and ( (not ent_d(0) ) or(ent_d(1) ) or (not ent_d(2) ) or (not ent_d(3) ) ) ) )) ;
+decena(1) <= (not( ( ( (not ent_d(0) ) or (ent_d(1) ) or(not ent_d(2) )or (ent_d(3) ) ) and ( (ent_d(0) ) or(not ent_d(1) ) or (not ent_d(2) )or (ent_d(3) ) ) and( (not ent_d(0) ) or (not ent_d(1) ) or (ent_d(2) ) or(not ent_d(3) ) ) and ( (ent_d(0) ) or (ent_d(1) ) or(not ent_d(2) )or (not ent_d(3) ) ) and ( (not ent_d(0) )or (not ent_d(1) ) or (not ent_d(2) ) or(not ent_d(3) ) ) ) )) ;
+decena(2) <= (not( ( ( (ent_d(0) ) or (not ent_d(1) ) or(ent_d(2) ) or (ent_d(3) ) ) and ( (ent_d(0) ) or (not ent_d(1) ) or (not ent_d(2) ) or (not ent_d(3) ) ) and( (ent_d(0) ) or (ent_d(1) ) or (not ent_d(2) ) or (not ent_d(3) ) ) and ( (not ent_d(0) ) or (not ent_d(1) )or (not ent_d(2) ) or (not ent_d(3) ) ) ) )) ;
+decena(3) <= (not( ( ( (not ent_d(0) ) or (ent_d(1) ) or(ent_d(2) )or (ent_d(3) ) ) and ( (ent_d(0) ) or(ent_d(1) ) or (not ent_d(2) )or (ent_d(3) ) ) and ( (not ent_d(0) ) or (not ent_d(1) ) or (not ent_d(2) ) or (ent_d(3) ) ) and ( (not ent_d(0) ) or (ent_d(1) ) or (ent_d(2) )or (not ent_d(3) ) ) and ( (ent_d(0) ) or (not ent_d(1) ) or (ent_d(2) )or (not ent_d(3) ) ) and ( (not ent_d(0) ) or (not ent_d(1) ) or (not ent_d(2) )or (not ent_d(3) ) ) ) )) ;
+decena(4) <= (not( ( ( (not ent_d(0) ) or (ent_d(1) ) or(ent_d(2) )or (ent_d(3) ) ) and ( (not ent_d(0) ) or(not ent_d(1) ) or (ent_d(2) )or (ent_d(3) ) ) and( (ent_d(0) ) or (ent_d(1) ) or (not ent_d(2) ) or(ent_d(3) ) ) and ( (not ent_d(0) ) or (ent_d(1) ) or(not ent_d(2) )or (ent_d(3) ) ) and ( (not ent_d(0) )or (not ent_d(1) ) or (not ent_d(2) )or (ent_d(3) ) )and ( (not ent_d(0) ) or (ent_d(1) ) or (ent_d(2) ) or(not ent_d(3) ) ) ) )) ;
+decena(5) <= (not( ( ( (not ent_d(0) ) or (ent_d(1) ) or (ent_d(2) )or (ent_d(3) ) ) and ( (ent_d(0) ) or (not ent_d(1) ) or (ent_d(2) )or (ent_d(3) ) ) and ( (not ent_d(0) ) or (not ent_d(1) ) or (ent_d(2) ) or(ent_d(3) ) ) and ( (not ent_d(0) ) or (not ent_d(1) )or (not ent_d(2) )or (ent_d(3) ) ) and ( (not ent_d(0) )or (ent_d(1) ) or (not ent_d(2) )or (not ent_d(3) ) ) ) ) );
+decena(6) <= (not( ( ( (ent_d(0) ) or (ent_d(1) ) or (ent_d(2) )or (ent_d(3) ) ) and ( (not ent_d(0) ) or(ent_d(1) ) or (ent_d(2) )or (ent_d(3) ) ) ) ) );
+
+End deco_dArch ;

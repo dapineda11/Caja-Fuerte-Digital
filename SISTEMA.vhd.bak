@@ -1,0 +1,123 @@
+--******************--
+--        PONTIFICIA UNIVERSIDAD JAVERIANA              --
+--              Diseño de sistema digitales             --
+--          Seccion de Tecnicas Digitales               --
+----------------------------------------------------------
+-- Título:  Proyecto 1                      	           --
+-- Fecha:  	octubre de 2019                             --
+--******************--
+
+--Definicion de las bibliotecas 
+library IEEE; 
+use IEEE.std_logic_1164.all;
+library ALTERA;
+use ALTERA.altera_primitives_components.all;
+
+--******************--
+-- Comentarios: este VHDL corresponde al bloque global  --
+-- Sistema.                                             --
+--                                                      --
+--******************--
+
+entity Sistema is
+port(
+		sistema_clki:  in std_logic; --reloj de entrada
+		sistema_clko: out std_logic; --reloj de salida
+		sistema_confirmar: in std_logic; --boton confirmar
+		sistema_cambiar: in std_logic; --boton cambiar
+		sistema_reset: in std_logic; --reset del sistema
+		switches: in std_logic_vector(2 downto 0); --switches de entrada
+		sistema_estados: out std_logic_vector (24 downto 0); --salida del estado en el que se enuentra el sistema 
+		seguro: out std_logic --salida de la puerta(abierta o no)
+		);
+end Entity Sistema;     
+
+architecture SistemaArch of Sistema is
+--Incluir componentes
+component Clave is
+port(
+		clave_in_1: in std_logic_vector (2 downto 0); --digito de entrada 1
+		clave_in_2: in std_logic_vector (2 downto 0); --digito de entrada 2
+		clave_in_3: in std_logic_vector (2 downto 0); --digito de entrada 3
+		EnableClave:in std_logic_vector (2 downto 0); --enable para los flip flops
+		resetClave: in std_logic;-- reset para la clave
+		clkClave:  	in std_logic;-- reloj 
+		clave_out_1: out std_logic_vector (2 downto 0);--salida al comparador 1
+		clave_out_2: out std_logic_vector (2 downto 0);--salida al comparador 2
+		clave_out_3: out std_logic_vector (2 downto 0)-- salida al comparador 3
+	 );
+end component Clave;     
+----------------------------------------------------------
+component comparadorClave is
+port(
+		clave_out_1: in std_logic_vector (2 downto 0);-- digito de entrada desde clave 1
+		clave_out_2: in std_logic_vector (2 downto 0);-- digito de entrada desde clave 2
+		clave_out_3: in std_logic_vector (2 downto 0);-- digito de entrada desde clave 3
+		dato_out_1: in std_logic_vector (2 downto 0);-- digito de entrada desde dato 1
+		dato_out_2: in std_logic_vector (2 downto 0);-- digito de entrada desde dato 2
+		dato_out_3: in std_logic_vector (2 downto 0);-- digito de entrada desde dato 3
+		Comparacion: out std_logic
+	 );
+end component comparadorClave;     
+------------------------------------------------------------------
+component Contador is
+port(
+		EnableContador:  in std_logic;-- enable para el contador
+		resetContador:  in std_logic;-- reset para el contador
+		clkContador:  in std_logic;-- reloj
+		conteo: out std_logic--aviso para cuando termine de contar
+	 );
+end component Contador;     
+-------------------------------------------------------------------
+component Control is
+port(
+		confirmar:  in std_logic;-- boton confirmar 
+		cambiar:  in std_logic;-- boton cambiar 
+		conteo: in std_logic; --aviso del contador
+		comparacion: in std_logic; --aviso del comparador
+		clk: in std_logic; --reloj
+		reset: in std_logic; --reset
+		control_EnableDato: out std_logic_vector (2 downto 0); --enable a registo dato
+		control_EnableClave: out std_logic_vector (2 downto 0); --enable a registro clave
+		control_EnableContador: out std_logic; --enable a contador
+		control_ResetContador: out std_logic; --reset a contador
+		resetDato: out std_logic; --reset a dato
+		resetClave: out std_logic; --reset a clave
+		seguroCaja: out std_logic;--salida seguro de la caja
+		estados: out std_logic_vector (24 downto 0) --estados en los que se encuentra el sistema
+		
+	 );
+end component Control;     
+--------------------------------------------------------------------
+component Dato is
+port(
+		EnableDato: in std_logic_vector (2 downto 0); --enable para los flip flops
+		resetDato:  in std_logic;-- reset 
+		clkDato:  	in std_logic;-- reloj
+		dato_in_1: 	in std_logic_vector (2 downto 0);--digito de entrada a dato1
+		dato_in_2: 	in std_logic_vector (2 downto 0);--digito de entrada a dato2
+		dato_in_3: 	in std_logic_vector (2 downto 0);--digito de entrada a dato3
+		dato_out_1: out std_logic_vector (2 downto 0);--salida al comparador 1
+		dato_out_2: out std_logic_vector (2 downto 0);--salida al comparador 2
+		dato_out_3: out std_logic_vector (2 downto 0)--salida al comparador 3
+
+	 );
+end component Dato;     
+---------------------------------------------------------------------
+--señales de conexion ente bloques
+signal datocomparador1,datocomparador2,datocomparador3: std_logic_vector (2 downto 0);
+signal clavecomparador1,clavecomparador2,clavecomparador3: std_logic_vector (2 downto 0);
+signal controlEnableDato, controlEnableClave: std_logic_vector (2 downto 0);
+signal controlResetDato, controlResetClave: std_logic;
+signal conteocontrol, comparacioncontrol: std_logic;
+signal controlEnableContador, controlResetContador: std_logic;
+-------------------------------------------------------------------------------
+begin
+--declaracion de bloques
+bloque_Dato: Dato port map (controlEnableDato, controlResetDato, sistema_clki, switches, switches, switches, datocomparador1, datocomparador2, datocomparador3);
+bloque_Control: Control port map (sistema_confirmar, sistema_cambiar, conteocontrol, comparacioncontrol, sistema_clki, sistema_reset, controlEnableDato, controlEnableClave, controlEnableContador, controlResetContador, controlResetDato, controlResetClave, seguro, sistema_estados);
+bloque_Contador: Contador port map (controlEnableContador, controlResetContador, sistema_clki, conteocontrol);
+bloque_comparadorClave: comparadorClave port map (clavecomparador1, clavecomparador2, clavecomparador3, datocomparador1, datocomparador2, datocomparador3, comparacioncontrol);
+bloque_Clave: Clave port map (switches, switches, switches, controlEnableClave, controlResetClave, sistema_clki, clavecomparador1, clavecomparador2, clavecomparador3);
+sistema_clko <= sistema_clki;
+End SistemaArch;

@@ -1,0 +1,63 @@
+--******************--
+--        PONTIFICIA UNIVERSIDAD JAVERIANA          
+-- Título:  CONTADO 	                      
+--******************--
+
+--Definicion de las bibliotecas 
+library IEEE; 
+use IEEE.std_logic_1164.all;
+library ALTERA;
+use ALTERA.altera_primitives_components.all;
+
+--******************--
+-- Comentarios  		                        --
+--       					        --
+--                                                      --
+--******************--
+
+entity CONTADOR is
+port(
+		conteo: out std_logic;--una señal de salida 
+		columnas: in std_logic_vector(3 downto 0);
+		reset_cont:  in std_logic;-- ESTE TIPO ES PARA UNA SOLA SEÑAL
+		clkCONTADOR:  in std_logic;-- ESTE TIPO ES PARA UNA SOLA SEÑAL
+		cuenta: out std_logic_vector(1 downto 0);
+		
+	 );
+end Entity CONTADOR;     
+
+architecture CONTADORArch of CONTADOR is
+--Incluir componentes
+component dffe
+port(
+	  d,clk,clrn,prn,ena	:IN std_logic;
+	  q						:OUT std_logic
+	  );
+end component;
+-- Funcionamiento 
+
+-- definir variables 
+signal q1, q2: std_logic;
+signal EnableCONTADOR: std_logic;
+
+signal c0,c1, c2, c3: std_logic;
+begin
+--desarrollo 
+
+c0 <= not columnas(0);
+c1 <= not columnas(1);
+c2 <= not columnas(2);
+c3 <= not columnas(3);
+
+EnableCONTADOR <= (c0 and c1 and c2 and c3) ;
+
+FF1:  dffe port map (not(q1) and not reset_cont,  clkCONTADOR, not reset_cont, '1', EnableCONTADOR, q1);
+FF2:  dffe port map (not(q2) and not reset_cont,  clkCONTADOR, not reset_cont, '1', EnableCONTADOR AND q1 , q2);
+
+conteo <= q1 and q2;
+
+cuenta(0) <= q1;
+cuenta(1) <= q2;
+
+End CONTADORArch;
+

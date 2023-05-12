@@ -1,0 +1,34 @@
+--Definicion de las bibliotecas 
+library IEEE; 
+use IEEE.std_logic_1164.all; 
+library ALTERA;
+use ALTERA.altera_primitives_components.all;
+
+--******************--
+-- Autor:Daniel Pineda						                       --
+--       												           --
+--                                                      --
+--******************--
+
+entity deco_u is
+port(
+	
+		ent_u		: in std_logic_vector (3 downto 0);
+		unidad	: out std_logic_vector (6 downto 0) --gfedcba
+		);
+	end entity deco_u;
+	
+
+
+architecture deco_uArch of deco_u is
+begin
+
+unidad(0) <= (not( ( ( (not ent_u(0) ) or (ent_u(1) ) or(ent_u(2) ) or (ent_u(3) ) ) and ( (ent_u(0) ) or(ent_u(1) ) or (not ent_u(2) ) or (ent_u(3) ) ) and( (not ent_u(0) ) or (not ent_u(1) ) or (ent_u(2) )or (not ent_u(3) ) ) and ( (not ent_u(0) ) or(ent_u(1) ) or (not ent_u(2) ) or (not ent_u(3) ) ) ) )) ;
+unidad(1) <= (not( ( ( (not ent_u(0) ) or (ent_u(1) ) or(not ent_u(2) )or (ent_u(3) ) ) and ( (ent_u(0) ) or(not ent_u(1) ) or (not ent_u(2) )or (ent_u(3) ) ) and( (not ent_u(0) ) or (not ent_u(1) ) or (ent_u(2) ) or(not ent_u(3) ) ) and ( (ent_u(0) ) or (ent_u(1) ) or(not ent_u(2) )or (not ent_u(3) ) ) and ( (not ent_u(0) )or (not ent_u(1) ) or (not ent_u(2) ) or(not ent_u(3) ) ) ) )) ;
+unidad(2) <= (not( ( ( (ent_u(0) ) or (not ent_u(1) ) or(ent_u(2) ) or (ent_u(3) ) ) and ( (ent_u(0) ) or (not ent_u(1) ) or (not ent_u(2) ) or (not ent_u(3) ) ) and( (ent_u(0) ) or (ent_u(1) ) or (not ent_u(2) ) or (not ent_u(3) ) ) and ( (not ent_u(0) ) or (not ent_u(1) )or (not ent_u(2) ) or (not ent_u(3) ) ) ) )) ;
+unidad(3) <= (not( ( ( (not ent_u(0) ) or (ent_u(1) ) or(ent_u(2) )or (ent_u(3) ) ) and ( (ent_u(0) ) or(ent_u(1) ) or (not ent_u(2) )or (ent_u(3) ) ) and ( (not ent_u(0) ) or (not ent_u(1) ) or (not ent_u(2) ) or (ent_u(3) ) ) and ( (not ent_u(0) ) or (ent_u(1) ) or (ent_u(2) )or (not ent_u(3) ) ) and ( (ent_u(0) ) or (not ent_u(1) ) or (ent_u(2) )or (not ent_u(3) ) ) and ( (not ent_u(0) ) or (not ent_u(1) ) or (not ent_u(2) )or (not ent_u(3) ) ) ) )) ;
+unidad(4) <= (not( ( ( (not ent_u(0) ) or (ent_u(1) ) or(ent_u(2) )or (ent_u(3) ) ) and ( (not ent_u(0) ) or(not ent_u(1) ) or (ent_u(2) )or (ent_u(3) ) ) and( (ent_u(0) ) or (ent_u(1) ) or (not ent_u(2) ) or(ent_u(3) ) ) and ( (not ent_u(0) ) or (ent_u(1) ) or(not ent_u(2) )or (ent_u(3) ) ) and ( (not ent_u(0) )or (not ent_u(1) ) or (not ent_u(2) )or (ent_u(3) ) )and ( (not ent_u(0) ) or (ent_u(1) ) or (ent_u(2) ) or(not ent_u(3) ) ) ) )) ;
+unidad(5) <= (not( ( ( (not ent_u(0) ) or (ent_u(1) ) or (ent_u(2) )or (ent_u(3) ) ) and ( (ent_u(0) ) or (not ent_u(1) ) or (ent_u(2) )or (ent_u(3) ) ) and ( (not ent_u(0) ) or (not ent_u(1) ) or (ent_u(2) ) or(ent_u(3) ) ) and ( (not ent_u(0) ) or (not ent_u(1) )or (not ent_u(2) )or (ent_u(3) ) ) and ( (not ent_u(0) )or (ent_u(1) ) or (not ent_u(2) )or (not ent_u(3) ) ) ) ) );
+unidad(6) <= (not( ( ( (ent_u(0) ) or (ent_u(1) ) or (ent_u(2) )or (ent_u(3) ) ) and ( (not ent_u(0) ) or(ent_u(1) ) or (ent_u(2) )or (ent_u(3) ) ) ) ) );
+
+End deco_uArch ;

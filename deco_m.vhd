@@ -1,0 +1,35 @@
+--Definicion de las bibliotecas 
+library IEEE; 
+use IEEE.std_logic_1164.all; 
+library ALTERA;
+use ALTERA.altera_primitives_components.all;
+
+
+--******************************************************--
+-- este bloque corresponde al deco para miles
+-- este es 1 en caso de que el numero sumado supere 
+-- los miles y 0 en caso contrario	                        --
+--       					        --
+--                                                      --
+--******************************************************--
+entity deco_m is
+port(
+	
+		Ultracarry		: in std_logic;
+		miles	: out std_logic_vector (6 downto 0) --gfedcba
+		);
+	end entity deco_m;
+	
+
+
+architecture deco_mArch of deco_m is
+begin
+miles(0) <= '1';
+miles(1) <= not Ultracarry and '1';
+miles(2) <= not Ultracarry and '1';
+miles(3) <= '1';
+miles(4) <= '1';
+miles(5) <= '1';
+miles(6) <= '1';
+
+End deco_mArch ;

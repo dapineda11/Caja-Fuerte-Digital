@@ -1,0 +1,56 @@
+--*************************--
+-- DEFINICIÓN DE LIBRERIAS --
+--*************************--
+library IEEE; 
+use IEEE.std_logic_1164.all;
+--****--
+-- DEFINICIÓN DE ENTIDAD --
+--****--
+	entity LEER is
+port(
+			columnas:IN std_logic_vector(3 downto 0); --
+			filas: 	IN std_logic_vector(3 downto 0); --
+			lectura:	OUT std_logic_vector(3 downto 0) --
+			
+	  );
+end entity LEER;        
+--***--
+--DEFINICIÓN DE ARQUITECTURA --
+--***--
+architecture LEERArch of LEER is
+--***--
+--DEFINICIÓN DE COMPONENTES--
+--***-- 
+
+--DEFINICIÓN DE SEÑALES DE CONEXIÓN --
+--****--
+signal c0: std_logic;
+signal c1: std_logic;
+signal c2: std_logic;
+signal c3: std_logic;
+
+signal f0: std_logic;
+signal f1: std_logic;
+signal f2: std_logic;
+signal f3: std_logic;
+
+--******--
+--Instancias y Conectividad
+--******--
+begin
+c0 <= columnas(0);
+c1 <= columnas(1);
+c2 <= columnas(2);
+c3 <= columnas(3);
+
+f0 <= filas(0);
+f1 <= filas(1);
+f2 <= filas(2);
+f3 <= filas(3);
+
+lectura(0) <= (f0 and c0) or (f0 and c2) or (f1 and c1) or(f2 and c0) or (f2 and c2);
+lectura(1) <= (f0 and c1) or (f0 and c2) or (f1 and c2) or(f2 and c0);
+lectura(2) <= (f1 and c0) or (f1 and c1) or (f1 and c2) or(f2 and c0);
+lectura(3) <= (f2 and c1) or (f2 and c2);
+
+end  LEERArch;

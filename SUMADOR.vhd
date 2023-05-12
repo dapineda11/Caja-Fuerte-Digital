@@ -1,0 +1,162 @@
+--*************************--
+-- DEFINICIÓN DE LIBRERIAS --
+--*************************--
+library IEEE; 
+use IEEE.std_logic_1164.all;
+--****--
+-- DEFINICIÓN DE ENTIDAD --
+--****--
+	entity SUMADOR is
+port(
+			DATO_out_1: IN std_logic_vector(3 downto 0); -- Número 1 IN; DATO_out_1
+			DATO_out_2: IN std_logic_vector(3 downto 0); -- Número 2 IN; DATO_out_4
+			DATO_out_3: IN std_logic_vector(3 downto 0); -- Número 3 IN; DATO_out_1
+			DATO_out_4: IN std_logic_vector(3 downto 0); -- Número 4 IN; DATO_out_4
+			DATO_out_5: IN std_logic_vector(3 downto 0); -- Número 5 IN; DATO_out_1
+			DATO_out_6: IN std_logic_vector(3 downto 0); -- Número 6 IN; DATO_out_4
+			suma_u: OUT std_logic_vector(3 downto 0); -- resultado de la suma_u
+			suma_d: OUT std_logic_vector(3 downto 0); -- resultado de la suma_d
+			suma_c: OUT std_logic_vector(3 downto 0); -- resultado de la suma_c
+			Ultracarry: OUT std_logic
+	  );
+end entity SUMADOR;  
+
+--******************************************************--
+-- este bloque corresponde al sumador, este se encarga de
+-- tomar los dos numeros de 3 digitos y los suma unidad con unidad,
+-- decena con decena y centena con centena, si en alguno de los casos
+-- el numero en unidades es mayor a 10 este le saca el complemento y separa el carry
+-- del 10 con el numero que lo acompaña, posteriormente se lo suma a decenas, si 
+-- el caso se repite en decenas le suma un carry a centenas, y finalmente si se repite
+-- se tendrà un numero mayor a mil, entonces "ultacarry" se enciende.	                        --
+--       					        --
+--                                                      --
+--******************************************************--      
+--***--
+--DEFINICIÓN DE ARQUITECTURA --
+--***--
+architecture SUMADORArch of SUMADOR is
+--***--
+--DEFINICIÓN DE COMPONENTES--
+--***--
+component fulladder
+port(
+      a         : IN std_logic;
+	   b         : IN std_logic;
+		Ci        : IN std_logic;
+		
+		Co        : OUT std_logic;
+		S         : OUT std_logic
+	  );
+end component; 
+
+--DEFINICIÓN DE SEÑALES DE CONEXIÓN --
+--****--
+signal C0, C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26: std_logic;
+signal R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26: std_logic;
+signal suma_mela1: std_logic_vector (4 downto 0); -- resultado de la suma_u
+signal suma_mela2: std_logic_vector (4 downto 0); -- resultado de la suma_d
+signal suma_mela3: std_logic_vector (4 downto 0); -- resultado de la suma_c
+signal condicion1, condicion2, condicion3: std_logic;
+signal suma_pro1: std_logic_vector(3 downto 0); -- resultado de la suma_u
+signal suma_pro2: std_logic_vector(3 downto 0); -- resultado de la suma_d
+signal suma_pro3: std_logic_vector(3 downto 0); -- resultado de la suma_c
+signal carreamelo1, carreamelo2, carreamelo3: std_logic;
+signal suma_ultra2: std_logic_vector(3 downto 0); -- resultado de la suma_d
+signal suma_ultra3: std_logic_vector(3 downto 0); -- resultado de la suma_c
+--******--
+--Instancias y Conectividad
+--******--
+begin
+--suma u-u, d-d, c-c
+FA0:   fulladder port map (DATO_out_1(0),  DATO_out_4(0), '0',   C0,  R0);
+FA1:   fulladder port map (DATO_out_1(1),  DATO_out_4(1),  C0,   C1,  R1);
+FA2:   fulladder port map (DATO_out_1(2),  DATO_out_4(2),  C1,   C2,  R2);
+FA3:   fulladder port map (DATO_out_1(3),  DATO_out_4(3),  C2,   C3,  R3);
+
+FA4:   fulladder port map (DATO_out_2(0), DATO_out_5(0), '0',   C4,  R4);
+FA5:   fulladder port map (DATO_out_2(1), DATO_out_5(1),  C4,   C5,  R5);
+FA6:   fulladder port map (DATO_out_2(2), DATO_out_5(2),  C5,   C6,  R6);
+FA7:   fulladder port map (DATO_out_2(3), DATO_out_5(3),  C6,   C7,  R7);
+
+FA8:   fulladder port map (DATO_out_3(0),  DATO_out_6(0), '0',   C8,  R8);
+FA9:   fulladder port map (DATO_out_3(1),  DATO_out_6(1),  C8,   C9,  R9);
+FA10:   fulladder port map (DATO_out_3(2),  DATO_out_6(2),  C9,   C10,  R10);
+FA11:   fulladder port map (DATO_out_3(3),  DATO_out_6(3),  C10,   C11,  R11);
+--almacenamiento de la suma realizada
+suma_mela1(0) <= R0;
+suma_mela1(1) <= R1;
+suma_mela1(2) <= R2;
+suma_mela1(3) <= R3;
+suma_mela1(4) <= C3;
+
+suma_mela2(0) <= R4;
+suma_mela2(1) <= R5;
+suma_mela2(2) <= R6;
+suma_mela2(3) <= R7;
+suma_mela2(4) <= C7;
+
+suma_mela3(0) <= R8;
+suma_mela3(1) <= R9;
+suma_mela3(2) <= R10;
+suma_mela3(3) <= R11;
+suma_mela3(4) <= C11;
+-- definicion de condiciones para que un numero sea mayor a 10
+condicion1 <= (suma_mela1(1) and suma_mela1(3)) or (suma_mela1(2) and suma_mela1(3)) or (suma_mela1(4));
+condicion2 <= (suma_mela2(1) and suma_mela2(3)) or (suma_mela2(2) and suma_mela2(3)) or (suma_mela2(4));
+condicion3 <= (suma_mela3(1) and suma_mela3(3)) or (suma_mela3(2) and suma_mela3(3)) or (suma_mela3(4));
+-- extracccion del complemento en caso de que la condicion se cumpla en unidades
+FA12:   fulladder port map (R0,  '0', '0',   C12,  R12);
+FA13:   fulladder port map (R1,  '1' and condicion1, C12,   C13,  R13);
+FA14:   fulladder port map (R2,  '1' and condicion1,  C13,   C14,  R14);
+FA15:   fulladder port map (R3,  '0',  C14,   C15,  R15);
+FA16:   fulladder port map (C3,  '0',  C15,   C16,  R16);
+-- almacenamiento de suma final unidades
+suma_pro1(0) <= R12;
+suma_pro1(1) <= R13;
+suma_pro1(2) <= R14;
+suma_pro1(3) <= R15;
+carreamelo1 <= R16;
+-- extracccion del complemento en caso de que la condicion se cumpla en decenas (y suma el carry de unidades en caso de que exista)
+FA17:   fulladder port map (suma_mela2(0),  '0', carreamelo1,   C17,  R17);
+FA18:   fulladder port map (suma_mela2(1),  '1' and condicion2, C17,   C18,  R18);
+FA19:   fulladder port map (suma_mela2(2),  '1' and condicion2,  C18,   C19,  R19);
+FA20:   fulladder port map (suma_mela2(3),  '0',  C19,   C20,  R20);
+FA21:   fulladder port map (suma_mela2(4),  '0',  C20,   C21,  R21);
+-- almacenamiento final de decenas
+suma_pro2(0) <= R17;
+suma_pro2(1) <= R18;
+suma_pro2(2) <= R19;
+suma_pro2(3) <= R20;
+carreamelo2 <= R21;
+-- extracccion del complemento en caso de que la condicion se cumpla en centenas (y suma el carry de decenas en caso de que exista)
+FA22:   fulladder port map (suma_mela3(0),  '0', carreamelo2,   C22,  R22);
+FA23:   fulladder port map (suma_mela3(1),  '1' and condicion3, C22,   C23,  R23);
+FA24:   fulladder port map (suma_mela3(2),  '1' and condicion3,  C23,   C24,  R24);
+FA25:   fulladder port map (suma_mela3(3),  '0',  C24,   C25,  R25);
+FA26:   fulladder port map (suma_mela3(4),  '0',  C25,   C26,  R26);
+-- almacenamiento final de centenas
+suma_pro3(0) <= R22;
+suma_pro3(1) <= R23;
+suma_pro3(2) <= R24;
+suma_pro3(3) <= R25;
+carreamelo3 <= R26;
+
+suma_u(0) <= suma_pro1(0);
+suma_u(1) <= suma_pro1(1);
+suma_u(2) <= suma_pro1(2);
+suma_u(3) <= suma_pro1(3);
+
+suma_d(0) <= suma_pro2(0);
+suma_d(1) <= suma_pro2(1);
+suma_d(2) <= suma_pro2(2);
+suma_d(3) <= suma_pro2(3);
+
+suma_c(0) <= suma_pro3(0);
+suma_c(1) <= suma_pro3(1);
+suma_c(2) <= suma_pro3(2);
+suma_c(3) <= suma_pro3(3);
+-- ultracarry solo es 1 si el numero en centenas lleva carry, es decir que sea mayor a mil.
+ultracarry <= carreamelo3;
+
+end  SUMADORArch;

@@ -1,0 +1,414 @@
+Simulator report for SISTEMA
+Sat Nov 16 16:35:31 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 180 nodes    ;
+; Simulation Coverage         ;      69.83 % ;
+; Total Number of Transitions ; 1606         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                 ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                       ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                        ;               ;
+; Vector input source                                                                        ; C:/Users/estudiante/Downloads/VHDLs_16_11_19/Waveform1.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                         ; On            ;
+; Check outputs                                                                              ; Off                                                        ; Off           ;
+; Report simulation coverage                                                                 ; On                                                         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                         ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                         ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                         ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                        ; Off           ;
+; Detect glitches                                                                            ; Off                                                        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                        ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                 ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                       ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                                                  ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                                                  ; Transport     ;
++--------------------------------------------------------------------------------------------+------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      69.83 % ;
+; Total nodes checked                                 ; 180          ;
+; Total output ports checked                          ; 179          ;
+; Total output ports with complete 1/0-value coverage ; 125          ;
+; Total output ports with no 1/0-value coverage       ; 54           ;
+; Total output ports with no 1-value coverage         ; 54           ;
+; Total output ports with no 0-value coverage         ; 54           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                  ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |Transmisor|comb~1          ; |Transmisor|comb~1          ; out0             ;
+; |Transmisor|comb~3          ; |Transmisor|comb~3          ; out0             ;
+; |Transmisor|comb~4          ; |Transmisor|comb~4          ; out0             ;
+; |Transmisor|comb~5          ; |Transmisor|comb~5          ; out0             ;
+; |Transmisor|comb~6          ; |Transmisor|comb~6          ; out0             ;
+; |Transmisor|comb~7          ; |Transmisor|comb~7          ; out0             ;
+; |Transmisor|comb~9          ; |Transmisor|comb~9          ; out0             ;
+; |Transmisor|comb~10         ; |Transmisor|comb~10         ; out0             ;
+; |Transmisor|comb~11         ; |Transmisor|comb~11         ; out0             ;
+; |Transmisor|comb~12         ; |Transmisor|comb~12         ; out0             ;
+; |Transmisor|comb~13         ; |Transmisor|comb~13         ; out0             ;
+; |Transmisor|comb~15         ; |Transmisor|comb~15         ; out0             ;
+; |Transmisor|comb~16         ; |Transmisor|comb~16         ; out0             ;
+; |Transmisor|comb~17         ; |Transmisor|comb~17         ; out0             ;
+; |Transmisor|comb~18         ; |Transmisor|comb~18         ; out0             ;
+; |Transmisor|comb~19         ; |Transmisor|comb~19         ; out0             ;
+; |Transmisor|comb~21         ; |Transmisor|comb~21         ; out0             ;
+; |Transmisor|comb~22         ; |Transmisor|comb~22         ; out0             ;
+; |Transmisor|comb~23         ; |Transmisor|comb~23         ; out0             ;
+; |Transmisor|comb~24         ; |Transmisor|comb~24         ; out0             ;
+; |Transmisor|comb~25         ; |Transmisor|comb~25         ; out0             ;
+; |Transmisor|comb~27         ; |Transmisor|comb~27         ; out0             ;
+; |Transmisor|comb~28         ; |Transmisor|comb~28         ; out0             ;
+; |Transmisor|comb~29         ; |Transmisor|comb~29         ; out0             ;
+; |Transmisor|comb~30         ; |Transmisor|comb~30         ; out0             ;
+; |Transmisor|comb~31         ; |Transmisor|comb~31         ; out0             ;
+; |Transmisor|comb~33         ; |Transmisor|comb~33         ; out0             ;
+; |Transmisor|comb~34         ; |Transmisor|comb~34         ; out0             ;
+; |Transmisor|comb~35         ; |Transmisor|comb~35         ; out0             ;
+; |Transmisor|comb~36         ; |Transmisor|comb~36         ; out0             ;
+; |Transmisor|comb~37         ; |Transmisor|comb~37         ; out0             ;
+; |Transmisor|comb~39         ; |Transmisor|comb~39         ; out0             ;
+; |Transmisor|comb~40         ; |Transmisor|comb~40         ; out0             ;
+; |Transmisor|comb~41         ; |Transmisor|comb~41         ; out0             ;
+; |Transmisor|comb~42         ; |Transmisor|comb~42         ; out0             ;
+; |Transmisor|comb~43         ; |Transmisor|comb~43         ; out0             ;
+; |Transmisor|comb~45         ; |Transmisor|comb~45         ; out0             ;
+; |Transmisor|comb~46         ; |Transmisor|comb~46         ; out0             ;
+; |Transmisor|comb~47         ; |Transmisor|comb~47         ; out0             ;
+; |Transmisor|comb~48         ; |Transmisor|comb~48         ; out0             ;
+; |Transmisor|comb~49         ; |Transmisor|comb~49         ; out0             ;
+; |Transmisor|comb~51         ; |Transmisor|comb~51         ; out0             ;
+; |Transmisor|comb~52         ; |Transmisor|comb~52         ; out0             ;
+; |Transmisor|comb~53         ; |Transmisor|comb~53         ; out0             ;
+; |Transmisor|comb~54         ; |Transmisor|comb~54         ; out0             ;
+; |Transmisor|comb~55         ; |Transmisor|comb~55         ; out0             ;
+; |Transmisor|comb~57         ; |Transmisor|comb~57         ; out0             ;
+; |Transmisor|comb~58         ; |Transmisor|comb~58         ; out0             ;
+; |Transmisor|comb~59         ; |Transmisor|comb~59         ; out0             ;
+; |Transmisor|comb~60         ; |Transmisor|comb~60         ; out0             ;
+; |Transmisor|comb~61         ; |Transmisor|comb~61         ; out0             ;
+; |Transmisor|comb~63         ; |Transmisor|comb~63         ; out0             ;
+; |Transmisor|comb~64         ; |Transmisor|comb~64         ; out0             ;
+; |Transmisor|comb~65         ; |Transmisor|comb~65         ; out0             ;
+; |Transmisor|comb~66         ; |Transmisor|comb~66         ; out0             ;
+; |Transmisor|comb~67         ; |Transmisor|comb~67         ; out0             ;
+; |Transmisor|comb~69         ; |Transmisor|comb~69         ; out0             ;
+; |Transmisor|comb~70         ; |Transmisor|comb~70         ; out0             ;
+; |Transmisor|comb~71         ; |Transmisor|comb~71         ; out0             ;
+; |Transmisor|comb~72         ; |Transmisor|comb~72         ; out0             ;
+; |Transmisor|comb~73         ; |Transmisor|comb~73         ; out0             ;
+; |Transmisor|comb~75         ; |Transmisor|comb~75         ; out0             ;
+; |Transmisor|comb~76         ; |Transmisor|comb~76         ; out0             ;
+; |Transmisor|comb~77         ; |Transmisor|comb~77         ; out0             ;
+; |Transmisor|comb~78         ; |Transmisor|comb~78         ; out0             ;
+; |Transmisor|comb~79         ; |Transmisor|comb~79         ; out0             ;
+; |Transmisor|comb~81         ; |Transmisor|comb~81         ; out0             ;
+; |Transmisor|comb~82         ; |Transmisor|comb~82         ; out0             ;
+; |Transmisor|comb~83         ; |Transmisor|comb~83         ; out0             ;
+; |Transmisor|comb~84         ; |Transmisor|comb~84         ; out0             ;
+; |Transmisor|comb~85         ; |Transmisor|comb~85         ; out0             ;
+; |Transmisor|comb~87         ; |Transmisor|comb~87         ; out0             ;
+; |Transmisor|comb~88         ; |Transmisor|comb~88         ; out0             ;
+; |Transmisor|comb~89         ; |Transmisor|comb~89         ; out0             ;
+; |Transmisor|comb~90         ; |Transmisor|comb~90         ; out0             ;
+; |Transmisor|comb~91         ; |Transmisor|comb~91         ; out0             ;
+; |Transmisor|comb~93         ; |Transmisor|comb~93         ; out0             ;
+; |Transmisor|comb~94         ; |Transmisor|comb~94         ; out0             ;
+; |Transmisor|comb~95         ; |Transmisor|comb~95         ; out0             ;
+; |Transmisor|comb~96         ; |Transmisor|comb~96         ; out0             ;
+; |Transmisor|comb~97         ; |Transmisor|comb~97         ; out0             ;
+; |Transmisor|comb~99         ; |Transmisor|comb~99         ; out0             ;
+; |Transmisor|comb~100        ; |Transmisor|comb~100        ; out0             ;
+; |Transmisor|comb~102        ; |Transmisor|comb~102        ; out0             ;
+; |Transmisor|comb~103        ; |Transmisor|comb~103        ; out0             ;
+; |Transmisor|EnableGuardar   ; |Transmisor|EnableGuardar   ; out              ;
+; |Transmisor|EnableDesplazar ; |Transmisor|EnableDesplazar ; out              ;
+; |Transmisor|clkTransmisor   ; |Transmisor|clkTransmisor   ; out              ;
+; |Transmisor|EnableGlobal    ; |Transmisor|EnableGlobal    ; out              ;
+; |Transmisor|Salida          ; |Transmisor|Salida          ; pin_out          ;
+; |Transmisor|FF1             ; |Transmisor|FF1             ; regout           ;
+; |Transmisor|FF2             ; |Transmisor|FF2             ; regout           ;
+; |Transmisor|FF3             ; |Transmisor|FF3             ; regout           ;
+; |Transmisor|FF4             ; |Transmisor|FF4             ; regout           ;
+; |Transmisor|FF5             ; |Transmisor|FF5             ; regout           ;
+; |Transmisor|FF6             ; |Transmisor|FF6             ; regout           ;
+; |Transmisor|FF7             ; |Transmisor|FF7             ; regout           ;
+; |Transmisor|FF8             ; |Transmisor|FF8             ; regout           ;
+; |Transmisor|FF9             ; |Transmisor|FF9             ; regout           ;
+; |Transmisor|FF10            ; |Transmisor|FF10            ; regout           ;
+; |Transmisor|FF11            ; |Transmisor|FF11            ; regout           ;
+; |Transmisor|FF12            ; |Transmisor|FF12            ; regout           ;
+; |Transmisor|FF13            ; |Transmisor|FF13            ; regout           ;
+; |Transmisor|FF14            ; |Transmisor|FF14            ; regout           ;
+; |Transmisor|FF15            ; |Transmisor|FF15            ; regout           ;
+; |Transmisor|FF16            ; |Transmisor|FF16            ; regout           ;
+; |Transmisor|FF17            ; |Transmisor|FF17            ; regout           ;
+; |Transmisor|FF18            ; |Transmisor|FF18            ; regout           ;
+; |Transmisor|FF19            ; |Transmisor|FF19            ; regout           ;
+; |Transmisor|FF20            ; |Transmisor|FF20            ; regout           ;
+; |Transmisor|FF21            ; |Transmisor|FF21            ; regout           ;
+; |Transmisor|FF22            ; |Transmisor|FF22            ; regout           ;
+; |Transmisor|FF23            ; |Transmisor|FF23            ; regout           ;
+; |Transmisor|FF24            ; |Transmisor|FF24            ; regout           ;
+; |Transmisor|FF25            ; |Transmisor|FF25            ; regout           ;
+; |Transmisor|FF26            ; |Transmisor|FF26            ; regout           ;
+; |Transmisor|FF27            ; |Transmisor|FF27            ; regout           ;
+; |Transmisor|FF28            ; |Transmisor|FF28            ; regout           ;
+; |Transmisor|FF29            ; |Transmisor|FF29            ; regout           ;
+; |Transmisor|FF30            ; |Transmisor|FF30            ; regout           ;
+; |Transmisor|FF31            ; |Transmisor|FF31            ; regout           ;
+; |Transmisor|FF32            ; |Transmisor|FF32            ; regout           ;
+; |Transmisor|FF33            ; |Transmisor|FF33            ; regout           ;
+; |Transmisor|FF34            ; |Transmisor|FF34            ; regout           ;
+; |Transmisor|FF35            ; |Transmisor|FF35            ; regout           ;
++-----------------------------+-----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                     ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |Transmisor|comb~2          ; |Transmisor|comb~2          ; out0             ;
+; |Transmisor|comb~8          ; |Transmisor|comb~8          ; out0             ;
+; |Transmisor|comb~14         ; |Transmisor|comb~14         ; out0             ;
+; |Transmisor|comb~20         ; |Transmisor|comb~20         ; out0             ;
+; |Transmisor|comb~26         ; |Transmisor|comb~26         ; out0             ;
+; |Transmisor|comb~32         ; |Transmisor|comb~32         ; out0             ;
+; |Transmisor|comb~38         ; |Transmisor|comb~38         ; out0             ;
+; |Transmisor|comb~44         ; |Transmisor|comb~44         ; out0             ;
+; |Transmisor|comb~50         ; |Transmisor|comb~50         ; out0             ;
+; |Transmisor|comb~56         ; |Transmisor|comb~56         ; out0             ;
+; |Transmisor|comb~62         ; |Transmisor|comb~62         ; out0             ;
+; |Transmisor|comb~68         ; |Transmisor|comb~68         ; out0             ;
+; |Transmisor|comb~74         ; |Transmisor|comb~74         ; out0             ;
+; |Transmisor|comb~80         ; |Transmisor|comb~80         ; out0             ;
+; |Transmisor|comb~86         ; |Transmisor|comb~86         ; out0             ;
+; |Transmisor|comb~92         ; |Transmisor|comb~92         ; out0             ;
+; |Transmisor|comb~98         ; |Transmisor|comb~98         ; out0             ;
+; |Transmisor|comb~101        ; |Transmisor|comb~101        ; out0             ;
+; |Transmisor|Big_out[1]      ; |Transmisor|Big_out[1]      ; out              ;
+; |Transmisor|Big_out[2]      ; |Transmisor|Big_out[2]      ; out              ;
+; |Transmisor|Big_out[3]      ; |Transmisor|Big_out[3]      ; out              ;
+; |Transmisor|Big_out[4]      ; |Transmisor|Big_out[4]      ; out              ;
+; |Transmisor|Big_out[5]      ; |Transmisor|Big_out[5]      ; out              ;
+; |Transmisor|Big_out[6]      ; |Transmisor|Big_out[6]      ; out              ;
+; |Transmisor|Big_out[7]      ; |Transmisor|Big_out[7]      ; out              ;
+; |Transmisor|Big_out[8]      ; |Transmisor|Big_out[8]      ; out              ;
+; |Transmisor|Big_out[9]      ; |Transmisor|Big_out[9]      ; out              ;
+; |Transmisor|Big_out[10]     ; |Transmisor|Big_out[10]     ; out              ;
+; |Transmisor|Big_out[11]     ; |Transmisor|Big_out[11]     ; out              ;
+; |Transmisor|Big_out[12]     ; |Transmisor|Big_out[12]     ; out              ;
+; |Transmisor|Big_out[13]     ; |Transmisor|Big_out[13]     ; out              ;
+; |Transmisor|Big_out[14]     ; |Transmisor|Big_out[14]     ; out              ;
+; |Transmisor|Big_out[15]     ; |Transmisor|Big_out[15]     ; out              ;
+; |Transmisor|Big_out[16]     ; |Transmisor|Big_out[16]     ; out              ;
+; |Transmisor|Big_out[17]     ; |Transmisor|Big_out[17]     ; out              ;
+; |Transmisor|Big_out[18]     ; |Transmisor|Big_out[18]     ; out              ;
+; |Transmisor|Big_out[19]     ; |Transmisor|Big_out[19]     ; out              ;
+; |Transmisor|Big_out[20]     ; |Transmisor|Big_out[20]     ; out              ;
+; |Transmisor|Big_out[21]     ; |Transmisor|Big_out[21]     ; out              ;
+; |Transmisor|Big_out[22]     ; |Transmisor|Big_out[22]     ; out              ;
+; |Transmisor|Big_out[23]     ; |Transmisor|Big_out[23]     ; out              ;
+; |Transmisor|Big_out[24]     ; |Transmisor|Big_out[24]     ; out              ;
+; |Transmisor|Big_out[25]     ; |Transmisor|Big_out[25]     ; out              ;
+; |Transmisor|Big_out[26]     ; |Transmisor|Big_out[26]     ; out              ;
+; |Transmisor|Big_out[27]     ; |Transmisor|Big_out[27]     ; out              ;
+; |Transmisor|Big_out[28]     ; |Transmisor|Big_out[28]     ; out              ;
+; |Transmisor|Big_out[29]     ; |Transmisor|Big_out[29]     ; out              ;
+; |Transmisor|Big_out[30]     ; |Transmisor|Big_out[30]     ; out              ;
+; |Transmisor|Big_out[31]     ; |Transmisor|Big_out[31]     ; out              ;
+; |Transmisor|Big_out[32]     ; |Transmisor|Big_out[32]     ; out              ;
+; |Transmisor|Big_out[33]     ; |Transmisor|Big_out[33]     ; out              ;
+; |Transmisor|Big_out[34]     ; |Transmisor|Big_out[34]     ; out              ;
+; |Transmisor|Big_out[35]     ; |Transmisor|Big_out[35]     ; out              ;
+; |Transmisor|resetTransmisor ; |Transmisor|resetTransmisor ; out              ;
++-----------------------------+-----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                     ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |Transmisor|comb~2          ; |Transmisor|comb~2          ; out0             ;
+; |Transmisor|comb~8          ; |Transmisor|comb~8          ; out0             ;
+; |Transmisor|comb~14         ; |Transmisor|comb~14         ; out0             ;
+; |Transmisor|comb~20         ; |Transmisor|comb~20         ; out0             ;
+; |Transmisor|comb~26         ; |Transmisor|comb~26         ; out0             ;
+; |Transmisor|comb~32         ; |Transmisor|comb~32         ; out0             ;
+; |Transmisor|comb~38         ; |Transmisor|comb~38         ; out0             ;
+; |Transmisor|comb~44         ; |Transmisor|comb~44         ; out0             ;
+; |Transmisor|comb~50         ; |Transmisor|comb~50         ; out0             ;
+; |Transmisor|comb~56         ; |Transmisor|comb~56         ; out0             ;
+; |Transmisor|comb~62         ; |Transmisor|comb~62         ; out0             ;
+; |Transmisor|comb~68         ; |Transmisor|comb~68         ; out0             ;
+; |Transmisor|comb~74         ; |Transmisor|comb~74         ; out0             ;
+; |Transmisor|comb~80         ; |Transmisor|comb~80         ; out0             ;
+; |Transmisor|comb~86         ; |Transmisor|comb~86         ; out0             ;
+; |Transmisor|comb~92         ; |Transmisor|comb~92         ; out0             ;
+; |Transmisor|comb~98         ; |Transmisor|comb~98         ; out0             ;
+; |Transmisor|comb~101        ; |Transmisor|comb~101        ; out0             ;
+; |Transmisor|Big_out[1]      ; |Transmisor|Big_out[1]      ; out              ;
+; |Transmisor|Big_out[2]      ; |Transmisor|Big_out[2]      ; out              ;
+; |Transmisor|Big_out[3]      ; |Transmisor|Big_out[3]      ; out              ;
+; |Transmisor|Big_out[4]      ; |Transmisor|Big_out[4]      ; out              ;
+; |Transmisor|Big_out[5]      ; |Transmisor|Big_out[5]      ; out              ;
+; |Transmisor|Big_out[6]      ; |Transmisor|Big_out[6]      ; out              ;
+; |Transmisor|Big_out[7]      ; |Transmisor|Big_out[7]      ; out              ;
+; |Transmisor|Big_out[8]      ; |Transmisor|Big_out[8]      ; out              ;
+; |Transmisor|Big_out[9]      ; |Transmisor|Big_out[9]      ; out              ;
+; |Transmisor|Big_out[10]     ; |Transmisor|Big_out[10]     ; out              ;
+; |Transmisor|Big_out[11]     ; |Transmisor|Big_out[11]     ; out              ;
+; |Transmisor|Big_out[12]     ; |Transmisor|Big_out[12]     ; out              ;
+; |Transmisor|Big_out[13]     ; |Transmisor|Big_out[13]     ; out              ;
+; |Transmisor|Big_out[14]     ; |Transmisor|Big_out[14]     ; out              ;
+; |Transmisor|Big_out[15]     ; |Transmisor|Big_out[15]     ; out              ;
+; |Transmisor|Big_out[16]     ; |Transmisor|Big_out[16]     ; out              ;
+; |Transmisor|Big_out[17]     ; |Transmisor|Big_out[17]     ; out              ;
+; |Transmisor|Big_out[18]     ; |Transmisor|Big_out[18]     ; out              ;
+; |Transmisor|Big_out[19]     ; |Transmisor|Big_out[19]     ; out              ;
+; |Transmisor|Big_out[20]     ; |Transmisor|Big_out[20]     ; out              ;
+; |Transmisor|Big_out[21]     ; |Transmisor|Big_out[21]     ; out              ;
+; |Transmisor|Big_out[22]     ; |Transmisor|Big_out[22]     ; out              ;
+; |Transmisor|Big_out[23]     ; |Transmisor|Big_out[23]     ; out              ;
+; |Transmisor|Big_out[24]     ; |Transmisor|Big_out[24]     ; out              ;
+; |Transmisor|Big_out[25]     ; |Transmisor|Big_out[25]     ; out              ;
+; |Transmisor|Big_out[26]     ; |Transmisor|Big_out[26]     ; out              ;
+; |Transmisor|Big_out[27]     ; |Transmisor|Big_out[27]     ; out              ;
+; |Transmisor|Big_out[28]     ; |Transmisor|Big_out[28]     ; out              ;
+; |Transmisor|Big_out[29]     ; |Transmisor|Big_out[29]     ; out              ;
+; |Transmisor|Big_out[30]     ; |Transmisor|Big_out[30]     ; out              ;
+; |Transmisor|Big_out[31]     ; |Transmisor|Big_out[31]     ; out              ;
+; |Transmisor|Big_out[32]     ; |Transmisor|Big_out[32]     ; out              ;
+; |Transmisor|Big_out[33]     ; |Transmisor|Big_out[33]     ; out              ;
+; |Transmisor|Big_out[34]     ; |Transmisor|Big_out[34]     ; out              ;
+; |Transmisor|Big_out[35]     ; |Transmisor|Big_out[35]     ; out              ;
+; |Transmisor|resetTransmisor ; |Transmisor|resetTransmisor ; out              ;
++-----------------------------+-----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Sat Nov 16 16:35:30 2019
+Info: Command: quartus_sim --simulation_results_format=VWF SISTEMA -c SISTEMA
+Info (324025): Using vector source file "C:/Users/estudiante/Downloads/VHDLs_16_11_19/Waveform1.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF2"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF4"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF6"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF8"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF10"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF12"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF14"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF16"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF18"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF20"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF22"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF24"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF26"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF28"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF30"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF32"
+Warning (324036): Found clock-sensitive change during active clock edge at time 150.0 ns on register "|Transmisor|FF34"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      69.83 %
+Info (328052): Number of transitions in simulation is 1606
+Info (324045): Vector file SISTEMA.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4474 megabytes
+    Info: Processing ended: Sat Nov 16 16:35:32 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
